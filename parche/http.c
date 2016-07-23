@@ -282,7 +282,7 @@ void http_serve(int fd, const char *name)
     }
     setenv("DOCUMENT_ROOT", pn, 1);
 
-    strncat(pn,sizeof(pn)-1-strlen(pn), name);
+    strncat(pn, name,sizeof(pn)-1-strlen(pn));
     split_path(pn);
 
     if (!stat(pn, &st))
